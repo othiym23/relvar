@@ -55,7 +55,7 @@ import isColor from './predicates/is-color.js';
 import assert from 'assert';
 
 function isPNO (str) {
-  if (!/[^[Pp]\d+]/.test(str)) {
+  if (!/[^[Pp]\d+$]/.test(str)) {
     throw new TypeError(str + ' is not a valid part number');
   }
   return true;
@@ -191,13 +191,14 @@ the attribute's `type` function.
 
 I've always placed a high value on backwards compatibility.
 
-- At New Relic, we stipulated that as tooling vendors we had little control
-  over what versions of Node.js our customers were running into production. For
-  a while, at least one large potential customer had important services running
+- At New Relic, we knew that as tooling vendors we had little control
+  over what versions of Node.js our customers were running in production.
+  For a while, at least one large customer had important services running
   under Node 0.6.
-- At npm, it's more important to the project that users be running a current
-  npm than a recent version of Node, so for the sake of ops teams running
-  legacy Node, we supported all the way back to 0.8 until very recently.
+- Within the npm CLI team, it's more important to the project that users
+  be running a current npm than a recent version of Node, so for the sake
+  of ops teams running legacy Node, we supported all the way back to 0.8
+  until very recently.
 
 At the same time, I really like using new JavaScript features, and I'd really
 like to use those features in my tests. I use [`tap`][] to write tests, because
