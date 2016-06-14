@@ -101,7 +101,7 @@ try {
     ['CITY', 'Oslo']
   ]));
 } catch (e) {
-  console.warn("that wasn't a good idea:", e.message)
+  console.warn("that wasn't a good idea:", e.message);
 }
 
 // also doesn't work:
@@ -114,7 +114,7 @@ try {
     ['CITY', 'London']
   ]));
 } catch (e) {
-  console.warn('still not a good idea:', e.message)
+  console.warn('still not a good idea:', e.message);
 }
 
 let totalWeight = 0;
