@@ -1,0 +1,30 @@
+{
+  "name": "relvar",
+  "version": "0.0.1",
+  "description": "CJ Date's relation variables as a JavaScript class, with helpers",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap --coverage lib/tap/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/othiym23/relvar.git"
+  },
+  "keywords": [
+    "dbms",
+    "relational",
+    "types"
+  ],
+  "author": "Forrest L Norvell <ogd@aoaioxxysz.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/othiym23/relvar/issues"
+  },
+  "homepage": "https://github.com/othiym23/relvar#readme",
+  "devDependencies": {
+    "tap": "^5.7.2"
+  }
+}
