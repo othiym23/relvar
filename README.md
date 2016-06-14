@@ -52,6 +52,8 @@ import { isFixnum, serializeFixnum } from 'relvar';
 
 import isColor from './predicates/is-color.js';
 
+import assert from 'assert';
+
 function isPNO (str) {
   if (!/[^[Pp]\d+]/.test(str)) {
     throw new TypeError(str + ' is not a valid part number');
@@ -117,10 +119,10 @@ try {
 
 let totalWeight = 0;
 // uses iteration protocol
-for (let tuple of parts) totalWeight += tuple.get('WEIGHT')
+for (let tuple of parts) totalWeight += tuple.get('WEIGHT');
 
-console.log('Total weight of parts is:', totalWeight)
-assert(totalWeight === 29)
+console.log('Total weight of parts is:', totalWeight);
+assert(totalWeight === 29);
 ```
 
 Some things to note in this example:
