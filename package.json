@@ -1,6 +1,6 @@
 {
   "name": "relvar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CJ Date's relation variables as a JavaScript class, with helpers",
   "main": "index.js",
   "directories": {
