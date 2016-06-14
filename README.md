@@ -31,18 +31,19 @@ Finally, a _heading_ is a set of attributes that define the tuples stored in the
 (all quotes taken from [_The New Relational Database Dictionary_][])
 
 To put it all together, a relvar comprises a heading that defines the
-number, name, and types of the elements of a set of tuples that can
-be used as an operand in the operations of the relational algebra
-and calculus. When it's reified into an on-disk value, it becomes a
-_relation value_. Basically, a relvar is analogous to a query result or
-a database view in a SQL RDBMS, and a relation value is (more or less) a
-table on disk.
+number, name, and types of the elements of its body, a set of tuples
+that can be used as an operand in the operations of the relational
+algebra and calculus. When it's reified into an on-disk store, it
+becomes a _relation value_. Basically, a relvar is analogous to a query
+result or a database view in a SQL RDBMS, and a relation value is (more
+or less) a table on disk.
 
 This package exports a constructor for relvars as well as a set of
 utility functions for validating and serializing commonly-used types for
-tuple attributes. It doesn't include a relational algebra / calculus,
-a storage engine, or a query language. Having all of these things
-available would be super cool, though.
+tuple attributes. It doesn't include a relational algebra / calculus, a
+storage engine, or a query language. It's intended to be used as a small
+building block used in larger relational frameworks. Having all of these
+things available would be super cool, though.
 
 ## defining relvars
 
@@ -165,6 +166,11 @@ included from an enclosing lexical scope. Type validators may be
 serialized into a data dictionary. Note that object wrappers for
 JavaScript's built-in value objects (Strings, Numbers, etc) can be used
 directly.
+
+Because of how the elements compose, it should be able to declare an
+attribute that itself has a relvar type; relvar headings and bodies
+should be serializable. If performance is a concern, this may not be the
+best idea.
 
 #### `serialize`
 
